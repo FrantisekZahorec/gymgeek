@@ -1,6 +1,6 @@
 """
 Šachovnice je 2D pole.
-Proto si ji tobrazíme seznam obshující řádky.
+Proto si ji zobrazíme seznam obsahující řádky.
 Každý řádek obsahuje políčka odpovídající sloupcům.
 """
 def vytvor_sachovnici():
