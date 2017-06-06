@@ -1,28 +1,23 @@
-
-
 def vytvor_sachovnici():
     sachovnice = []
     for radek in range(3):
-        sachovnice.append([])#přidáme nový řádek s indexem radek od 0 do 2
+        sachovnice.append([]) #přidáme nový řádek s indexem radek od 0 do 2
         for policko in range(3):
-            sachovnice[radek].append(" ")#do řádku v přidám políčka s indexem od 2 do 3
+            sachovnice[radek].append(" ") #do řádku v přidám políčka s indexem od 2 do 3
     return sachovnice
-
-
 
 def zobraz_plochu(plocha):
     for radek in plocha:
         print(radek)
 
-
 def zadej_vstup(pole, hrac):
     print("Na tahu je hráč {}.".format(hrac))
     vstup = True
     while vstup:
-        radek = int(input(" Zadej číslo řádku. ")) - 1
+        radek = int(input("Zadej číslo řádku. ")) - 1
         sloupec = int(input("Zadej číslo sloupce. ")) - 1
         if 0 <= radek < len(pole[0]) and 0 <= sloupec < len(pole):
-            if pole[radek][sloupec].upper() not in ["X","O"]:
+            if pole[radek][sloupec].upper() not in "X","O":
                 vstup = False
                 souradnice = [radek, sloupec]
             else:
@@ -32,7 +27,6 @@ def zadej_vstup(pole, hrac):
     return souradnice
 
 def zkontroluj(pole, hrac):
-
     for radek in pole:
         znaku = 0
         for policko in radek:
@@ -65,9 +59,7 @@ def zkontroluj(pole, hrac):
             zprava = 0
     if zleva == 3 or zprava == 3:
         return True
-    
     return False
-    
     
 # Hra - 1. a 2. hráč
 def hra():
@@ -87,11 +79,12 @@ def hra():
 
 #hra()
 """
+#mojetesty
 hraci_plocha = vytvor_sachovnici()
 hraci_plocha [0][2]="X"
-hraci_plocha [0][1]=" "
-hraci_plocha [2][0]="X"
-hraci_plocha [1][1]="X"
+hraci_plocha [1][2]="X"
+hraci_plocha [2][2]="X"
+hraci_plocha [1][1]=" "
 zobraz_plochu(hraci_plocha)
 a = zkontroluj(hraci_plocha, "X")
 print(a)
